@@ -1,0 +1,50 @@
+[gd_scene load_steps=4 format=3 uid="uid://bi3m6kfeinph0"]
+
+[ext_resource type="PackedScene" uid="uid://cyxtw8anfnq12" path="res://scenes/PrevewPane/PlayerWindow/PlayerWindow.tscn" id="1_ukvni"]
+
+[sub_resource type="Gradient" id="Gradient_4hxvg"]
+offsets = PackedFloat32Array(0, 0.340909, 0.704545, 1)
+colors = PackedColorArray(0.360617, 0.098001, 0.62131, 1, 0.226782, 0.436767, 0.820776, 1, 0.296764, 0.798039, 0.912528, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_jnjjv"]
+gradient = SubResource("Gradient_4hxvg")
+width = 1280
+height = 269
+fill_from = Vector2(0.190367, 0.480202)
+fill_to = Vector2(0.947248, 0.109137)
+
+[node name="PreviewPane" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -451.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1280.0
+offset_bottom = 269.0
+texture = SubResource("GradientTexture2D_jnjjv")
+
+[node name="Footer" type="ColorRect" parent="."]
+layout_mode = 0
+offset_top = 259.0
+offset_right = 1280.0
+offset_bottom = 272.0
+color = Color(0, 0, 0, 1)
+
+[node name="PlayerWindow" parent="." instance=ExtResource("1_ukvni")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = -666.0
+offset_bottom = -259.0
+
+[node name="PlayerWindow2" parent="." instance=ExtResource("1_ukvni")]
+layout_mode = 1
+offset_left = 666.0
+offset_top = 10.0
+offset_right = -11.0
+offset_bottom = -259.0

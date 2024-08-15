@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://on3bt5vbam6d"]
+
+[node name="BattleMode" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -840.0
+offset_bottom = -670.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Outer" type="Polygon2D" parent="."]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 29, 12, 4, 428, 4, 440, 29, 428, 54, 12, 54)
+
+[node name="Inner" type="Polygon2D" parent="."]
+color = Color(0.941176, 0.74902, 0.0745098, 1)
+polygon = PackedVector2Array(10, 29, 22, 7, 418, 7, 430, 29, 418, 51, 22, 51)
