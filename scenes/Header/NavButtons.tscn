@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://cj8tridi6tp20"]
+
+[node name="NavButtons" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1072.0
+offset_bottom = -673.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Back" type="Polygon2D" parent="."]
+color = Color(0.750124, 0.0764781, 0.156264, 1)
+polygon = PackedVector2Array(0, 0, 105, 0, 83, 47, 0, 47)
+
+[node name="Book" type="Polygon2D" parent="."]
+color = Color(0.49325, 0.0737388, 0.112997, 1)
+polygon = PackedVector2Array(105, 0, 208, 0, 186, 47, 83, 47)

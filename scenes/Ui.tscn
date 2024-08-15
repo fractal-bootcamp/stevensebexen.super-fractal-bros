@@ -1,4 +1,8 @@
-[gd_scene format=3 uid="uid://w8elo4uok73h"]
+[gd_scene load_steps=4 format=3 uid="uid://w8elo4uok73h"]
+
+[ext_resource type="PackedScene" uid="uid://dyap1c6yob63d" path="res://scenes/CharacterSelect/CharacterSelect.tscn" id="1_8cg85"]
+[ext_resource type="PackedScene" uid="uid://bpmppnajm8ljm" path="res://scenes/Header/Header.tscn" id="1_nryd2"]
+[ext_resource type="PackedScene" uid="uid://bi3m6kfeinph0" path="res://scenes/PrevewPane/PreviewPane.tscn" id="3_f4ruo"]
 
 [node name="UI_Root" type="Control"]
 layout_mode = 3
@@ -7,3 +11,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="CharacterSelect" parent="." instance=ExtResource("1_8cg85")]
+layout_mode = 1
+offset_top = 54.0
+offset_bottom = -272.0
+
+[node name="Header" parent="." instance=ExtResource("1_nryd2")]
+layout_mode = 1
+
+[node name="PreviewPane" parent="." instance=ExtResource("3_f4ruo")]
+layout_mode = 1
+offset_top = 451.0
+offset_bottom = 0.0

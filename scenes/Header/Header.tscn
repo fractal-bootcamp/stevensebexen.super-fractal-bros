@@ -1,0 +1,45 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpmppnajm8ljm"]
+
+[ext_resource type="PackedScene" uid="uid://cj8tridi6tp20" path="res://scenes/Header/NavButtons.tscn" id="1_v0u1l"]
+[ext_resource type="PackedScene" uid="uid://on3bt5vbam6d" path="res://scenes/Header/BattleMode.tscn" id="2_5ava5"]
+
+[sub_resource type="Gradient" id="Gradient_8bxgk"]
+offsets = PackedFloat32Array(0.0211268, 0.514085, 1)
+colors = PackedColorArray(0.587035, 0.722509, 1, 1, 1, 0.755784, 0.0903782, 1, 0.937311, 0.344585, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ncd0w"]
+gradient = SubResource("Gradient_8bxgk")
+width = 1280
+
+[node name="Header" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -666.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="Bottom" type="Polygon2D" parent="Background"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(0, 29, 1280, 8, 1280, 54, 0, 54)
+
+[node name="Top" type="Polygon2D" parent="Background"]
+texture = SubResource("GradientTexture2D_ncd0w")
+polygon = PackedVector2Array(0, 29, 0, 0, 1280, 0, 1280, 15)
+
+[node name="CenterLine" type="Polygon2D" parent="."]
+color = Color(0.783274, 0, 0.0532165, 1)
+polygon = PackedVector2Array(0, 29, 1069, 0, 1280, 0, 1280, 29)
+
+[node name="NavButtons" parent="." instance=ExtResource("1_v0u1l")]
+layout_mode = 1
+offset_bottom = -7.0
+
+[node name="BattleMode" parent="." instance=ExtResource("2_5ava5")]
+layout_mode = 1
+offset_left = 217.0
+offset_right = -623.0
+offset_bottom = -54.0
