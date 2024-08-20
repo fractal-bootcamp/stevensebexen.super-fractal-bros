@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://cyxtw8anfnq12"]
 
-[ext_resource type="Texture2D" uid="uid://dvwdcqewg3dcr" path="res://assets/PlayerWindow.svg" id="1_8d6v0"]
+[ext_resource type="Texture2D" uid="uid://3u1f8lp4rnyq" path="res://assets/PlayerWindow.png" id="1_b3k7b"]
 
 [node name="PlayerWindow" type="Control"]
 layout_mode = 3
@@ -13,5 +13,5 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_8d6v0")
+texture = ExtResource("1_b3k7b")
 centered = false
