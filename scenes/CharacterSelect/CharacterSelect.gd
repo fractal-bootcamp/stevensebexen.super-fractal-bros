@@ -19,7 +19,7 @@ func _process(delta):
 
 
 func create_character_card_box():
-	for i in range(0, CHARACTER_NAMES.size() - 1):
+	for i in range(0, CHARACTER_NAMES.size()):
 		var character_card = CharacterCard.instantiate()
 		character_card.portrait = load("res://assets/portraits/%s.png" % CHARACTER_NAMES[i].to_lower())
 		character_card.character_name = CHARACTER_NAMES[i]
