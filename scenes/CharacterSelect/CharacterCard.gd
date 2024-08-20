@@ -4,6 +4,8 @@ extends Control
 @export var portrait: Texture2D
 @export var character_name: String
 
+signal clicked(character_name: String)
+
 var bg_offset: Vector2
 
 # Called when the node enters the scene tree for the first time.
@@ -20,3 +22,8 @@ func _process(delta):
 	$Background.region_rect.size = size
 	$Background.region_rect.position = position + bg_offset
 	pass
+
+func _gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			clicked.emit(character_name)
