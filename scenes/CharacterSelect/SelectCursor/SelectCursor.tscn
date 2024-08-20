@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://gdb7n0xysd17"]
+
+[ext_resource type="PackedScene" uid="uid://dhpe00kb8a4cy" path="res://scenes/CharacterSelect/SelectCursor/Cursor.tscn" id="1_0cgqf"]
+[ext_resource type="Script" path="res://scenes/CharacterSelect/SelectCursor/SelectCursor.gd" id="1_wcxg5"]
+[ext_resource type="PackedScene" uid="uid://dkwc52mgfu0e" path="res://scenes/CharacterSelect/SelectCursor/Token.tscn" id="2_r5ngv"]
+
+[node name="SelectCursor" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_wcxg5")
+
+[node name="Token" parent="." instance=ExtResource("2_r5ngv")]
+
+[node name="Cursor" parent="." instance=ExtResource("1_0cgqf")]
+
+[connection signal="clicked" from="Token" to="." method="_on_token_clicked"]

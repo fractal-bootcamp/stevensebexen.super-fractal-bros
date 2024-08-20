@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://dhpe00kb8a4cy"]
+
+[ext_resource type="Texture2D" uid="uid://cgkt5cmelplmq" path="res://assets/hand.png" id="1_8u7hv"]
+[ext_resource type="Script" path="res://scenes/CharacterSelect/SelectCursor/Cursor.gd" id="2_atjut"]
+
+[node name="Cursor" type="Sprite2D"]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("1_8u7hv")
+offset = Vector2(50, 10)
+hframes = 2
+region_enabled = true
+region_rect = Rect2(0, 0, 300, 128)
+script = ExtResource("2_atjut")

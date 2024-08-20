@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://w8elo4uok73h"]
+[gd_scene load_steps=5 format=3 uid="uid://w8elo4uok73h"]
 
 [ext_resource type="PackedScene" uid="uid://dyap1c6yob63d" path="res://scenes/CharacterSelect/CharacterSelect.tscn" id="1_8cg85"]
 [ext_resource type="PackedScene" uid="uid://bpmppnajm8ljm" path="res://scenes/Header/Header.tscn" id="1_nryd2"]
 [ext_resource type="PackedScene" uid="uid://bi3m6kfeinph0" path="res://scenes/PrevewPane/PreviewPane.tscn" id="3_f4ruo"]
+[ext_resource type="PackedScene" uid="uid://gdb7n0xysd17" path="res://scenes/CharacterSelect/SelectCursor/SelectCursor.tscn" id="4_riuo4"]
 
 [node name="UI_Root" type="Control"]
 layout_mode = 3
@@ -24,3 +25,7 @@ layout_mode = 1
 layout_mode = 1
 offset_top = 451.0
 offset_bottom = 0.0
+
+[node name="SelectCursor" parent="." instance=ExtResource("4_riuo4")]
+
+[connection signal="character_selected" from="CharacterSelect" to="SelectCursor" method="_on_character_select_character_selected"]
