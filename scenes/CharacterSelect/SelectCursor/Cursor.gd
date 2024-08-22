@@ -17,3 +17,4 @@ func close_hand():
 	
 func open_hand():
 	is_open = true
+	

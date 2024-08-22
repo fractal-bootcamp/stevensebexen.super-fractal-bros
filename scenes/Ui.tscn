@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://w8elo4uok73h"]
+[gd_scene load_steps=7 format=3 uid="uid://w8elo4uok73h"]
 
 [ext_resource type="PackedScene" uid="uid://dyap1c6yob63d" path="res://scenes/CharacterSelect/CharacterSelect.tscn" id="1_8cg85"]
+[ext_resource type="Script" path="res://scenes/Ui.gd" id="1_384r2"]
 [ext_resource type="PackedScene" uid="uid://bpmppnajm8ljm" path="res://scenes/Header/Header.tscn" id="1_nryd2"]
 [ext_resource type="PackedScene" uid="uid://bi3m6kfeinph0" path="res://scenes/PrevewPane/PreviewPane.tscn" id="3_f4ruo"]
-[ext_resource type="PackedScene" uid="uid://gdb7n0xysd17" path="res://scenes/CharacterSelect/SelectCursor/SelectCursor.tscn" id="4_riuo4"]
+[ext_resource type="PackedScene" uid="uid://dkwc52mgfu0e" path="res://scenes/CharacterSelect/SelectCursor/Token.tscn" id="4_5pcge"]
+[ext_resource type="PackedScene" uid="uid://dhpe00kb8a4cy" path="res://scenes/CharacterSelect/SelectCursor/Cursor.tscn" id="5_h02t8"]
 
 [node name="UI_Root" type="Control"]
 layout_mode = 3
@@ -12,6 +14,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+script = ExtResource("1_384r2")
 
 [node name="CharacterSelect" parent="." instance=ExtResource("1_8cg85")]
 layout_mode = 1
@@ -26,6 +30,10 @@ layout_mode = 1
 offset_top = 451.0
 offset_bottom = 0.0
 
-[node name="SelectCursor" parent="." instance=ExtResource("4_riuo4")]
+[node name="Token" parent="." instance=ExtResource("4_5pcge")]
+layout_mode = 0
 
-[connection signal="character_selected" from="CharacterSelect" to="SelectCursor" method="_on_character_select_character_selected"]
+[node name="Cursor" parent="." instance=ExtResource("5_h02t8")]
+
+[connection signal="character_selected" from="CharacterSelect" to="." method="_on_character_select_character_selected"]
+[connection signal="clicked" from="Token" to="." method="_on_token_clicked"]
