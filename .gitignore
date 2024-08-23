@@ -2,3 +2,5 @@
 .godot/
 
 notes/
+project-files/
+**/*.import

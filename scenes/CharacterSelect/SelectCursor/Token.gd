@@ -1,4 +1,4 @@
-extends Area2D
+extends Control
 
 @export var snap_speed: float
 
@@ -14,8 +14,9 @@ enum STATE {DROPPED, PICKING_UP, HELD}
 func _ready():
 	pass
 
-
 func _process(delta):
+	mouse_filter = Control.MOUSE_FILTER_STOP if state == STATE.DROPPED else MOUSE_FILTER_IGNORE
+	$TokenTexture.mouse_filter = mouse_filter
 	pos_dst = get_global_mouse_position()
 	if state == STATE.PICKING_UP:
 		pos += delta / snap_speed
@@ -25,14 +26,7 @@ func _process(delta):
 		position = pos_dst * pos + pos_src * (1 - pos)
 	if state == STATE.HELD:
 		position = pos_dst
-
-
-func _on_input_event(_viewport, event, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			clicked.emit()
-
-
+		
 func drop():
 	state = STATE.DROPPED
 
@@ -41,3 +35,10 @@ func pick_up():
 	pos_src = position
 	pos_dst = get_global_mouse_position()
 	state = STATE.PICKING_UP
+
+
+func _on_token_texture_gui_input(event):
+	if event is InputEventMouseButton:
+		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
+			print('b')
+			clicked.emit()
