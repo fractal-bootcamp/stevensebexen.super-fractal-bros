@@ -14,5 +14,5 @@ func _process(delta):
 func set_selected_character(character_name: String):
 	selected_character = character_name
 	$PlayerSplash.texture = CharacterInfo.CHARACTER_SPLASHES[character_name]
-	$PlayerSplash.color = Color(255, 255, 255, 1.0)
+	$PlayerSplash.color = Color(1, 1, 1, 1)
 	print(character_name)
