@@ -40,5 +40,4 @@ func pick_up():
 func _on_token_texture_gui_input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT and event.pressed:
-			print('b')
 			clicked.emit()

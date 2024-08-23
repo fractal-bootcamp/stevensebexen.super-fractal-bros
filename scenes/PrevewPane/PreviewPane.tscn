@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bi3m6kfeinph0"]
+[gd_scene load_steps=5 format=3 uid="uid://bi3m6kfeinph0"]
 
+[ext_resource type="Script" path="res://scenes/PrevewPane/PreviewPane.gd" id="1_24fih"]
 [ext_resource type="PackedScene" uid="uid://cyxtw8anfnq12" path="res://scenes/PrevewPane/PlayerWindow/PlayerWindow.tscn" id="1_ukvni"]
 
 [sub_resource type="Gradient" id="Gradient_4hxvg"]
@@ -22,6 +23,7 @@ offset_bottom = -451.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 1
+script = ExtResource("1_24fih")
 
 [node name="Background" type="TextureRect" parent="."]
 layout_mode = 0
@@ -52,3 +54,9 @@ offset_top = 10.0
 offset_right = -11.0
 offset_bottom = -259.0
 mouse_filter = 1
+
+[node name="PlayerSplash" type="Polygon2D" parent="."]
+texture_repeat = 1
+position = Vector2(0, 18)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(14, 58, 71, 0, 313, 0, 252, 251, 14, 251)

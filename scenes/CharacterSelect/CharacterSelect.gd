@@ -2,12 +2,6 @@ extends Control
 
 signal character_selected(character_name: String)
 
-var CHARACTER_NAMES: Array[String] = [
-	"Brian", "Bruno", "Dorothy", "Iyana", "Jacob",
-	"Josh", "Lui", "Mehul", "Norman", "Parth",
-	"Pranav", "Sam", "Sarah", "Steven"
-]
-
 var CharacterCard = load("res://scenes/CharacterSelect/CharacterCard.tscn")
 
 # Called when the node enters the scene tree for the first time.
@@ -21,10 +15,10 @@ func _process(_delta):
 
 
 func create_character_card_box():
-	for i in range(0, CHARACTER_NAMES.size()):
+	for i in range(0, CharacterInfo.CHARACTER_NAMES.size()):
 		var character_card = CharacterCard.instantiate()
-		character_card.portrait = load("res://assets/portraits/%s.png" % CHARACTER_NAMES[i].to_lower())
-		character_card.character_name = CHARACTER_NAMES[i]
+		character_card.portrait = CharacterInfo.CHARACTER_PORTRAITS[CharacterInfo.CHARACTER_NAMES[i]]
+		character_card.character_name = CharacterInfo.CHARACTER_NAMES[i]
 		character_card.clicked.connect(_on_character_card_clicked)
 		$CharacterCards.add_child(character_card)
 
