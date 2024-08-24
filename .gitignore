@@ -3,4 +3,5 @@
 
 notes/
 project-files/
-**/*.import
+*.import
+.DS_Store

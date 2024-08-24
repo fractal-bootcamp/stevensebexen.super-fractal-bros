@@ -32,6 +32,7 @@ offset_bottom = 0.0
 
 [node name="Token" parent="." instance=ExtResource("4_5pcge")]
 layout_mode = 0
+scale = Vector2(0.85, 0.85)
 
 [node name="Cursor" parent="." instance=ExtResource("5_h02t8")]
 
