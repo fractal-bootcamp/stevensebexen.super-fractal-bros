@@ -1,9 +1,9 @@
 extends Node
 
 @export var CHARACTER_NAMES: Array[String] = [
-	"Brian", "Bruno", "Dorothy", "Iyana", "Jacob",
-	"Josh", "Lui", "Mehul", "Norman", "Parth",
-	"Pranav", "Sam", "Sarah", "Steven"
+	'Lui', 'Parth', 'Sarah', 'Pranav', 'Mehul',
+	'Bruno', 'Iyana', 'Norman', 'Steven', 'Jacob',
+	'Brian', 'Josh', 'Sam', 'Dorothy'
 ]
 
 var CHARACTER_PORTRAITS: Dictionary = {}
