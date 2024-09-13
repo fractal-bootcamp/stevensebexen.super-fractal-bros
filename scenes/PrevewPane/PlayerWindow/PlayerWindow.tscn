@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cyxtw8anfnq12"]
+[gd_scene load_steps=7 format=3 uid="uid://cyxtw8anfnq12"]
 
 [ext_resource type="Texture2D" uid="uid://3u1f8lp4rnyq" path="res://assets/PlayerWindow.png" id="1_b3k7b"]
+[ext_resource type="Script" path="res://scenes/PrevewPane/PlayerWindow/PlayerWindow.gd" id="1_omux7"]
+[ext_resource type="Texture2D" uid="uid://d0f566ra2l1u6" path="res://assets/twitter_logo.svg" id="3_775ei"]
+[ext_resource type="Texture2D" uid="uid://b1knqcvesj2kx" path="res://assets/github_logo.svg" id="4_ltspp"]
+
+[sub_resource type="SystemFont" id="SystemFont_ru2if"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_j5ec6"]
+font = SubResource("SystemFont_ru2if")
+font_color = Color(0, 0, 0, 1)
+outline_color = Color(0, 0, 0, 1)
 
 [node name="PlayerWindow" type="Control"]
 layout_mode = 3
@@ -11,7 +21,59 @@ offset_right = -677.0
 offset_bottom = -461.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_omux7")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 texture = ExtResource("1_b3k7b")
 centered = false
+
+[node name="Twitter" type="Label" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 47.0
+offset_right = 543.0
+offset_bottom = 82.0
+text = "
+"
+label_settings = SubResource("LabelSettings_j5ec6")
+vertical_alignment = 1
+
+[node name="GitHub" type="Label" parent="."]
+layout_mode = 0
+offset_left = 376.0
+offset_top = 100.0
+offset_right = 543.0
+offset_bottom = 135.0
+text = "
+"
+label_settings = SubResource("LabelSettings_j5ec6")
+vertical_alignment = 1
+
+[node name="PersonalSite" type="Label" parent="."]
+layout_mode = 0
+offset_left = 346.0
+offset_top = 152.0
+offset_right = 545.0
+offset_bottom = 187.0
+text = "
+"
+label_settings = SubResource("LabelSettings_j5ec6")
+vertical_alignment = 1
+
+[node name="TwitterLogo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 54.0
+offset_right = 367.0
+offset_bottom = 78.0
+texture = ExtResource("3_775ei")
+expand_mode = 1
+
+[node name="GithubLogo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 343.0
+offset_top = 106.0
+offset_right = 367.0
+offset_bottom = 130.0
+texture = ExtResource("4_ltspp")
+expand_mode = 1
